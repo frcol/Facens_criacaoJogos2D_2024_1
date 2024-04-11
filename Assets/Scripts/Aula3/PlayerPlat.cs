@@ -19,4 +19,9 @@ public class PlayerPlat : MonoBehaviour
         Vector2 direction = Vector2.right * hor;
         rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        GameManager.Instance.DestroyAllEnemies();
+    }
 }
